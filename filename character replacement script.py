@@ -10,7 +10,7 @@ except FileNotFoundError:
     print('\nSorry, this folder does not exist.')
     sys.exit()
 if len(os.listdir(root_folder)) == 0:
-    print('\nSorry, this folder appears to be empty. ')
+    print('\nSorry, this folder appears to be empty.')
     sys.exit()
 
 target_nameText = input('\nEnter the text in each name that you want to replace.\n')
@@ -18,11 +18,13 @@ target_nameText = input('\nEnter the text in each name that you want to replace.
 replacement_nameText = input('\nEnter the replacement name text.\n')
 
 invalid_chars = ['//','\\',':','*','?','"','<','>','|']
-
+invalid_input = False
 for i in invalid_chars:
     if i in replacement_nameText:
-        print('\nSorry, that symbol is not allowed.')
-        sys.exit()
+        invalid_input = True
+if invalid_input == True:
+    print('Sorry, this input includes characters which are not allowed. Prohibited characters include: /\:,*?"<>|')
+    sys.exit()
 
 rename_files_in_subfolders = input('\nDo you want to change files in subfolders within this folder? (y/n) \n')
 rename_files_in_subfolders = rename_files_in_subfolders.lower()
