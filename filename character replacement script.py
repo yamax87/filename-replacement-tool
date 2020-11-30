@@ -92,6 +92,5 @@ print('-'*50)
 print('\n####### PROCESS COMPLETED #######')
 input('\nPress Enter to exit')
 
-print('THIS IS A TEST COMMENT')
         
 
